@@ -6,7 +6,7 @@ Returns a SQL query string that will create the Country table with four columns:
 */
 
 const createCountryTable = () => {
-  return;
+  return `CREATE TABLE Country (name text not null, code integer not null, gdp integer, population integer)`;
 };
 
 /*
@@ -14,7 +14,9 @@ Returns a SQL query string that will create the GoldMedal table with ten columns
 */
 
 const createGoldMedalTable = () => {
-  return;
+  return `CREATE TABLE GoldMedal (id integer primary key, year integer not null, 
+    city text not null, season text not null, name text not null, country text not null,
+    gender text not null, sport text not null, discipline text not null, event text not null)`;
 };
 
 /*
@@ -22,7 +24,7 @@ Returns a SQL query string that will find the number of gold medals for the give
 */
 
 const goldMedalNumber = country => {
-    return;
+    return `SELECT COUNT(*) as count FROM GoldMedal WHERE country = ${country}`;
 };
 
 /*
